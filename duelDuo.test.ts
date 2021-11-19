@@ -18,3 +18,8 @@ test('Title shows up when page loads', async () => {
     const displayed = await title.isDisplayed()
     expect(displayed).toBe(true)
 })
+
+test('add to duo displays div with id', async () => {
+    await driver.findElement(By.id('player-id'))
+    
+})
