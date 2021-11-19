@@ -15,6 +15,7 @@ var rollbar = new Rollbar({
 // record a generic message and send it to Rollbar
 rollbar.log('Hello world!')
 rollbar.log('My rollbar sucks')
+//im not gonna do more logs cause thats dumb but i didnt do good with trying to send errors and such
 
 app.use(express.json())
 
