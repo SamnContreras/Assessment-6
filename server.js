@@ -19,13 +19,13 @@ rollbar.log('My rollbar sucks')
 
 app.use(express.json())
 
-app.get("/", (req, res)  => {
-    res.sendFile(path.join(__dirname, "/public/index.html"));
+app.get("/", (req, res)  => { //endpoint
+    res.sendFile(path.join(__dirname, "/public/index.html")); //static file
 });
 
-app.use("/js", express.static(path.join(__dirname, "/public/index.js")));
+app.use("/js", express.static(path.join(__dirname, "/public/index.js"))); //middleware
 
-app.use("/css", express.static(path.join(__dirname, "/public/index.css")));
+app.use("/styles", express.static(path.join(__dirname, "/public/index.css"))); //middleware
 
 app.get('/api/robots', (req, res) => {
     try {

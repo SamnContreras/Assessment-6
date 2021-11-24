@@ -1,12 +1,24 @@
 const {shuffleArray} = require('./utils')
+let ex = [3, 7, 6, 1, 4];
+
 
 describe('shuffleArray should return an array', () => {
-    test('returns random array', () => {
-        expect(shuffleArray).toBe(shuffleArray)
+    test('shuffleArray returns random array', () => { 
+        expect(Array.isArray(shuffleArray(ex))).toBe(true);
     });
 
-    test("array length to be same", () => {
-        const array = [3, 1]
-        expect(shuffleArray(array).toHaveLength(array)(2));
+    test("array has the same length as one passed in", () => {
+        const result = shuffleArray(ex);
+        expect(result.length).toBe(ex.length);
     });
-})
+
+    test("both arrays have same values", () => {
+        const result = shuffleArray(ex);
+        expect(ex).toEqual(expect.arrayContaining(ex));
+    });
+
+    test("items have been shuffled", () => {
+        let result = shuffleArray(ex);
+        expect(result.join()).not.toEqual(ex.join());
+    })
+});
