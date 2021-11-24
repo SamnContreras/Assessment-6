@@ -42,7 +42,7 @@ test('reomved btn goes back to choices', async () => {
     await driver.sleep(500);
     await driver.findElement(By.xpath('(//button[text()="Add to Duo"])[1]')).click();
     await driver.findElement(By.xpath('(//button[text()="Remove from Duo"])')).click();
-    const returnedCard = await driver.findElement(By.xpath('(//div[@class="bot-card outline"][5])')).click();
+    const returnedCard = await driver.findElement(By.xpath('(//div[@class="bot-card outline"][5])'));
     const displayed = await returnedCard.isDisplayed();
     expect(displayed).toBe(true);
 });
